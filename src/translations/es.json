@@ -1,0 +1,22 @@
+{
+    "Home": "Inicio",
+    "Prayers": "Rezos",
+    "Flashcards": "Flashcards",
+    "Settings": "Ajustes",
+
+    "homepage.title": "¡Bienvenido Clase!",
+    "homepage.description": "¿Perdiste tu libro? No más excusas, sé que tienes tu teléfono...",
+    "homepage.description2": "¡Usa esta página para estudiar tus oraciones y preguntas!",
+    "homepage.prayers.body": "¡Aquí encontrarás todas las oraciones que has estado aprendiendo en clase!",
+    "homepage.flashcards.body": "¡Aquí podrás estudiar las 92 preguntas de la clase usando flashcards!",
+
+    "Back": "Atrás",
+
+    "Language": "Idioma",
+    "English": "Inglés",
+    "Spanish": "Español",
+    "Save": "Guardar",
+    "Go": "Ir",
+    "Next": "Siguiente",
+    "Previous": "Anterior"
+}

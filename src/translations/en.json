@@ -1,0 +1,22 @@
+{
+    "Home": "Home",
+    "Prayers": "Prayers",
+    "Flashcards": "Flashcards",
+    "Settings": "Settings",
+
+    "homepage.title": "Welcome Class!",
+    "homepage.description": "Lost your book? No more excuses, I know you have your phone...",
+    "homepage.description2": "Use this website to study your prayers and questions!",
+    "homepage.prayers.body": "Here you will find all the prayers you have been learning in class!",
+    "homepage.flashcards.body": "Here you will be able to study all 92 class questions using flashcards!",
+
+    "Back": "Back",
+
+    "Language": "Language",
+    "English": "English",
+    "Spanish": "Spanish",
+    "Save": "Save",
+    "Go": "Go",
+    "Next": "Next",
+    "Previous": "Previous"
+}
