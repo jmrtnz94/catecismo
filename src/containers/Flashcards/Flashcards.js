@@ -60,22 +60,23 @@ class Flashcards extends Component {
                     </Hidden>
                     <Grid item xs={12} sm={8}>
                         <Grid container spacing={16} justify="center">
-                            <Grid item xs={12}>
-                            <Flashcard 
-                                question={this.state.selectedFlashcard.question} 
-                                answer={this.state.selectedFlashcard.answer}
-                                showAnswer={this.state.showAnswer}
-                                prev={this.prevCardHandler}
-                                next={this.nextCardHandler}
-                                cardClicked={this.cardClickedHandler} />
+                            <Grid item xs={11}>
+                                <Flashcard 
+                                    question={this.state.selectedFlashcard.question} 
+                                    answer={this.state.selectedFlashcard.answer}
+                                    showAnswer={this.state.showAnswer}
+                                    prev={this.prevCardHandler}
+                                    next={this.nextCardHandler}
+                                    cardClicked={this.cardClickedHandler} />
                             </Grid>
                             <Hidden xsDown>
-                                <Grid item xs={6}>
+                                <Grid item xs={5}>
                                     <Button variant="contained" color="primary" fullWidth onClick={this.prevCardHandler}>
                                         <FormattedMessage id="Previous" defaultMessage="Previous" />
                                     </Button>
                                 </Grid>
-                                <Grid item xs={6}>
+                                <Grid item xs={1} />
+                                <Grid item xs={5}>
                                     <Button variant="contained" color="primary" fullWidth onClick={this.nextCardHandler}>
                                         <FormattedMessage id="Next" defaultMessage="Next" />
                                     </Button>

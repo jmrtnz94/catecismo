@@ -63,26 +63,6 @@ class Homepage extends Component {
                                 </Grid>
                             </Grid>
                         </Grid>
-                        
-                        {/* <Grid item xs={12} sm={6}>
-                            <Paper style={styles.App}>
-                                <h3><FormattedMessage id="homepage.prayers" defaultMessage="Prayers" /></h3>
-                                <p><FormattedMessage id="homepage.prayers.body" defaultMessage="Click here to study Prayers..." /></p>
-                                <Button variant="contained" color="primary" fullWidth onClick={() => {this.props.history.push('/prayers');}}>
-                                    <FormattedMessage id="homepage.go" defaultMessage="Go"/>
-                                </Button>
-                            </Paper>
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <Paper style={styles.App}>
-                                <h3><FormattedMessage id="homepage.flashcards" defaultMessage="Flashcards" /></h3>
-                                <p><FormattedMessage id="homepage.flashcards.body" defaultMessage="Click here to study questions on flashcards..." /></p>
-                                <Button variant="contained" color="primary" fullWidth onClick={() => {this.props.history.push('/flashcards');}}>
-                                    <FormattedMessage id="homepage.go" defaultMessage="Go"/>
-                                </Button>
-                            </Paper>
-                        </Grid> */}
-
                     </Grid>
             //     </div>
             // </div>

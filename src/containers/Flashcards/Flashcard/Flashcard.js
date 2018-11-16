@@ -62,22 +62,19 @@ class Flashcard extends Component {
                 onClick={this.props.cardClicked}
                 onTouchStart={(event) => this.onTouchStartHandler(event)} 
                 onTouchMove={(event) => this.onTouchMoveHandler(event)}>
-                <Grid container style={{height: '48%', textAlign: 'center'}} justify='center' alignItems='center'>
+                <Grid container style={{height: '48%', textAlign: 'center', fontSize: '2.75vh'}} justify='center' alignItems='center'>
                     <Grid item xs={12}>
                         <h2>{this.props.question}</h2>
                     </Grid>
                 </Grid>
                 <hr className={styles.hr} />
-                <Grid container style={{height: '48%', textAlign: 'center'}} justify='center' alignItems='center'>
+                <Grid container style={{height: '48%', textAlign: 'center', fontSize: '2vh'}} justify='center' alignItems='center'>
                     <Grid item xs={12}>
                         <p style={{visibility: this.props.showAnswer ? 'visible' : 'hidden'}}>
-                            {this.props.answer.map(line => 
-                                <>{line} </>
-                            )}
+                            {this.props.answer.map(line => <>{line}<br/></>)}
                         </p>
                     </Grid>
                 </Grid>
-                
             </Card>
         );
     }

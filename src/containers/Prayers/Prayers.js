@@ -28,7 +28,7 @@ class Prayers extends Component {
         if(!this.props.isLoading && this.props.prayers !== null){
             prayersMenuHtml = (
                 this.props.prayers.map(prayer => (
-                    <Grid key={prayer.id} item xs={4}>
+                    <Grid key={prayer.id} item xs={6} sm={4}>
                         <Paper
                             className={styles.menu}
                             //className={styles.menu+' '+(this.state.selectedPrayer !== null && prayer.id === this.state.selectedPrayer.id ? styles.active : '')} 
@@ -54,9 +54,7 @@ class Prayers extends Component {
                 <Grid item xs={12}>
                     <Paper style={{padding: 20}}>
                         <h4>{this.state.selectedPrayer.title}</h4>
-                        {this.state.selectedPrayer.body.map(line => 
-                            <p style={{marginTop: '5px', marginBottom: '5px'}}>{line}</p>
-                        )}
+                        <p>{this.state.selectedPrayer.body.map(line => <>{line}<br/></>)}</p>
                     </Paper>
                     <Hidden smUp>
                         <Button variant="contained" color="primary" onClick={this.returnToPrayersHandler} style={{marginTop: 10}} fullWidth>
