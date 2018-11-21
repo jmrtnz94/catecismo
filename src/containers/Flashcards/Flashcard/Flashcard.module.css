@@ -1,8 +1,48 @@
 .hr {
-    width: 90%;
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    padding: 0; 
+  width: 90%;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  padding: 0; 
+}
+
+.flip-card-container {
+  width: 100%;
+  height: 75vh;
+  min-height: 400px;
+  margin-top: 5px;
+  perspective: 1500px;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.75s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card-front {
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.full-size{
+  width: 100%;
+  height: 100%;
 }
