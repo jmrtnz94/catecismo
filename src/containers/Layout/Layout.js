@@ -3,14 +3,16 @@ import {withRouter} from 'react-router-dom';
 
 import {Header, Footer} from '../../components/Layouts/index';
 
+import styles from './Layout.module.css';
+
 class Layout extends Component{
     render() {
         return(
             <>
                 <Header />
 
-                <div style={{maxWidth: '1000px', marginLeft: 'auto', marginRight: 'auto'}}>
-                    <div style={{margin: '10px 10px 50px 10px'}}>
+                <div className={styles['layout-wrapper']}>
+                    <div className={styles['layout']}>
                         {this.props.children}
                     </div>
                 </div>

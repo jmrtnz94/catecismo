@@ -36,7 +36,6 @@ export const loadAppData = () => {
 }
 
 const loadAppDataStart = () => {
-    console.log("LOADING APP DATA");
     return {
         type: actionTypes.LOAD_APP_DATA_START
     }

@@ -1,0 +1,9 @@
+.layout-wrapper{
+    max-width: 1000px; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.layout{
+    margin: 10px 10px 50px 10px;
+}

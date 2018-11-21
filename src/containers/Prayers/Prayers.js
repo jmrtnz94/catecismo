@@ -54,7 +54,7 @@ class Prayers extends Component {
                 <Grid item xs={12}>
                     <Paper style={{padding: 20}}>
                         <h4>{this.state.selectedPrayer.title}</h4>
-                        <p>{this.state.selectedPrayer.body.map(line => <>{line}<br/></>)}</p>
+                        <p>{this.state.selectedPrayer.body.map((line, i) => <span key={i}>{line}<br/></span>)}</p>
                     </Paper>
                     <Hidden smUp>
                         <Button variant="contained" color="primary" onClick={this.returnToPrayersHandler} style={{marginTop: 10}} fullWidth>
