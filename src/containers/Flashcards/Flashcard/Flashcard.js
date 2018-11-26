@@ -68,38 +68,69 @@ class Flashcard extends Component {
     }
 
     render(){
-        let innerCard = styles['flip-card'];
+        let card = styles['card'];
         if(this.props.showAnswer){
-            innerCard += ' '+ styles.flip;
+            card += ' '+ styles['apply-flip'];
+        }
+
+        let answer = null;
+        if(!this.state.newCard){
+            answer = this.props.answer.map((line, i) => <span key={i}>{line}<br/></span>);
         }
 
         return (
-            <div className={styles['flip-card-container']}
+            <div className={card}
                 onClick={this.cardClicked}
                 onTouchStart={(event) => this.onTouchStartHandler(event)} 
                 onTouchMove={(event) => this.onTouchMoveHandler(event)}>
-                <div className={innerCard}> 
-                    <Card className={styles['flip-card-front'] + ' ' + styles['full-size']}>
-                        <Grid container justify="center" alignItems="center" className={styles['full-size']}>
-                            <Grid item>
-                                <h3 style={{margin: '0px 10px'}}>
+                <div className={styles['content']}>
+                    <Card className={styles['card-front']}>
+                         <Grid container justify="center" alignItems="center" className={styles['full-size']}>
+                             <Grid item>
+                                <h3 style={{margin: '0px 10px', textAlign: 'center'}}>
                                     {this.props.question}
                                 </h3>
                             </Grid>
                         </Grid>
                     </Card>
-                    
-                    <Card className={styles['flip-card-back'] + ' ' + styles['full-size']}>
-                        <Grid container justify="center" alignItems="center" className={styles['full-size']}>
+                    <Card className={styles['card-back']}>
+                         <Grid container justify="center" alignItems="center" className={styles['full-size']}>
                             <Grid item>
-                                <h4 style={{margin: '0px 10px', fontStyle: 'italic', fontWeight: 'inherit', visibility: this.state.newCard ? 'hidden' : 'visible'}}>
-                                    {this.props.answer.map((line, i) => <span key={i}>{line}<br/></span>)}
+                                <h4 style={{margin: '0px 10px', textAlign: 'center', fontStyle: 'italic', fontWeight: 'inherit'}}>
+                                    {answer}
                                 </h4>
                             </Grid>
                         </Grid>
                     </Card>
                 </div>
             </div>
+
+            // <div className={card}
+            //     onClick={this.cardClicked}
+            //     onTouchStart={(event) => this.onTouchStartHandler(event)} 
+            //     onTouchMove={(event) => this.onTouchMoveHandler(event)}>
+            //     <div className={styles['content']}> 
+            //         <Card className={styles['cardFront'] + ' ' + styles['full-size']}>
+            //             <Grid container justify="center" alignItems="center" className={styles['full-size']}>
+            //                 <Grid item>
+            //                     <h3 style={{margin: '0px 10px'}}>
+            //                         {this.props.question}
+            //                     </h3>
+            //                 </Grid>
+            //             </Grid>
+            //         </Card>
+                    
+            //         <Card className={styles['cardBack'] + ' ' + styles['full-size']}>
+            //             <Grid container justify="center" alignItems="center" className={styles['full-size']}>
+            //                 <Grid item>
+            //                     <h4 style={{margin: '0px 10px', fontStyle: 'italic', fontWeight: 'inherit', visibility: this.state.newCard ? 'hidden' : 'visible'}}>
+            //                         {this.props.answer.map((line, i) => <span key={i}>{line}<br/></span>)}
+            //                     </h4>
+            //                 </Grid>
+            //             </Grid>
+            //         </Card>
+            //     </div>
+            // </div>
         );
     }
 };
