@@ -12,7 +12,7 @@ class Flashcard extends Component {
     }
 
     componentDidUpdate(prevProps){
-        if(this.props.question !== prevProps.question){
+        if(this.props.flashcard.question !== prevProps.flashcard.question){
             this.setState({newCard: true});
         }
     }
@@ -75,7 +75,7 @@ class Flashcard extends Component {
 
         let answer = null;
         if(!this.state.newCard){
-            answer = this.props.answer.map((line, i) => <span key={i}>{line}<br/></span>);
+            answer = this.props.flashcard.answer.map((line, i) => <span key={i}>{line}<br/></span>);
         }
 
         return (
@@ -88,7 +88,7 @@ class Flashcard extends Component {
                          <Grid container justify="center" alignItems="center" className={styles['full-size']}>
                              <Grid item>
                                 <h3 style={{margin: '0px 10px', textAlign: 'center'}}>
-                                    {this.props.question}
+                                    {this.props.flashcard.question}
                                 </h3>
                             </Grid>
                         </Grid>
@@ -104,33 +104,6 @@ class Flashcard extends Component {
                     </Card>
                 </div>
             </div>
-
-            // <div className={card}
-            //     onClick={this.cardClicked}
-            //     onTouchStart={(event) => this.onTouchStartHandler(event)} 
-            //     onTouchMove={(event) => this.onTouchMoveHandler(event)}>
-            //     <div className={styles['content']}> 
-            //         <Card className={styles['cardFront'] + ' ' + styles['full-size']}>
-            //             <Grid container justify="center" alignItems="center" className={styles['full-size']}>
-            //                 <Grid item>
-            //                     <h3 style={{margin: '0px 10px'}}>
-            //                         {this.props.question}
-            //                     </h3>
-            //                 </Grid>
-            //             </Grid>
-            //         </Card>
-                    
-            //         <Card className={styles['cardBack'] + ' ' + styles['full-size']}>
-            //             <Grid container justify="center" alignItems="center" className={styles['full-size']}>
-            //                 <Grid item>
-            //                     <h4 style={{margin: '0px 10px', fontStyle: 'italic', fontWeight: 'inherit', visibility: this.state.newCard ? 'hidden' : 'visible'}}>
-            //                         {this.props.answer.map((line, i) => <span key={i}>{line}<br/></span>)}
-            //                     </h4>
-            //                 </Grid>
-            //             </Grid>
-            //         </Card>
-            //     </div>
-            // </div>
         );
     }
 };

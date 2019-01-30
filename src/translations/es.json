@@ -18,5 +18,21 @@
     "Save": "Guardar",
     "Go": "Ir",
     "Next": "Siguiente",
-    "Previous": "Anterior"
+    "Previous": "Anterior",
+
+    "flashcards.title": "Selecciona Flashcards",
+    "flashcards.description": "Selecciona los Flashcards que te gustaria estudiar.",
+    "Min": "Mínimo",
+    "Max": "Máximo",
+    "flashcards.error.min_greater_equal_max": "El mínimo no puede ser mayor o igual que el máximo.",
+    "flashcards.error.max_less_equal_min": "El máximo no puede ser menor o igual al mínimo.",
+    "flashcards.error.empty_set": "No encontramos esos Flashcards, por favor seleccione nuevos números.",
+
+    "error.required": "Obligatorio",
+    "error.email": "Debe ser un correo electrónico",
+    "error.numeric": "Debe ser numérico",
+    "error.minLength": "Longitud mínima es {min, number}",
+    "error.maxLength": "Longitud máxima es {max, number}",
+    "error.minValue": "El valor mínimo es {min, number}",
+    "error.maxValue": "El valor máximo es {max, number}"
 }

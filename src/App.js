@@ -6,7 +6,6 @@ import Layout from './containers/Layout/Layout';
 import Homepage from './containers/Homepage/Homepage';
 import Prayers from './containers/Prayers/Prayers';
 import Flashcards from './containers/Flashcards/Flashcards';
-//import SelectFlashcards from './containers/Flashcards/SelectFlashcards';
 import * as actions from './store/actions/actions';
 import Settings from './containers/Settings/Settings';
 
@@ -21,7 +20,6 @@ class App extends Component {
       <>
         <Layout>
           <Switch>
-            {/* <Route path="/select-flashcards" component={SelectFlashcards} /> */}
             <Route path="/flashcards" component={Flashcards} />
             <Route path="/prayers" component={Prayers} />
             <Route path="/settings" component={Settings} />

@@ -17,6 +17,7 @@
   	height: 75vh;
   	min-height: 400px;
 	margin-top: 5px;
+	cursor: pointer;
 	
   	perspective: 1500px;
 	-webkit-perspective: 1500px;
