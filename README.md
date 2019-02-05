@@ -4,12 +4,12 @@ This React web app was created to help the students of Cristo Rey Catecismo stud
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
 For development, you will only need Node.js installed on your environment.
-And code editor of your choice. I use [Visual Studio Code](https://code.visualstudio.com/).
+And a code editor of your choice. I use [Visual Studio Code](https://code.visualstudio.com/).
 
 ### Node
 
