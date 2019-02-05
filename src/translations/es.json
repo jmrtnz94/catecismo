@@ -34,5 +34,13 @@
     "error.minLength": "Longitud mínima es {min, number}",
     "error.maxLength": "Longitud máxima es {max, number}",
     "error.minValue": "El valor mínimo es {min, number}",
-    "error.maxValue": "El valor máximo es {max, number}"
+    "error.maxValue": "El valor máximo es {max, number}",
+
+    "flashcards.instructions.title": "Instrucciones",
+    "flashcards.instructions.mobile.title": "Mobile Users",
+    "flashcards.instructions.mobile.body": "Swipe left and right to move between flashcard. Tap on a flashcard to view answer.",
+    "flashcards.instructions.desktop.title": "Desktop Users",
+    "flashcards.instructions.desktop.body": "Click on Previous and Next buttons to move between flashcard. Click on a flashcard to view answer.",
+    "OK": "DE ACUERDO",
+    "settings.clear_settings": "Borrar Ajustes"
 }

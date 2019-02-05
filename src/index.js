@@ -25,7 +25,6 @@ addLocaleData([...en, ...es]);
 
 let locale = localStorage.getItem("locale");
 if(!locale){
-    console.log("First time visit - setting locale - locale set");
     localStorage.setItem("locale", "en");
     locale = 'en';
 }

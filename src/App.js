@@ -8,6 +8,7 @@ import Prayers from './containers/Prayers/Prayers';
 import Flashcards from './containers/Flashcards/Flashcards';
 import * as actions from './store/actions/actions';
 import Settings from './containers/Settings/Settings';
+import About from './components/About/About';
 
 class App extends Component {
 
@@ -23,6 +24,7 @@ class App extends Component {
             <Route path="/flashcards" component={Flashcards} />
             <Route path="/prayers" component={Prayers} />
             <Route path="/settings" component={Settings} />
+            <Route path="/about" component={About} />
             <Route path="/" component={Homepage} />
           </Switch>
         </Layout>

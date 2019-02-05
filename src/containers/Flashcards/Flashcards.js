@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {FormattedMessage} from 'react-intl';
-import {Grid, Paper, FormControl, InputLabel, Input, FormHelperText, Button, CircularProgress} from '@material-ui/core';
+import {Paper, TextField, Button, CircularProgress} from '@material-ui/core';
 
 import {updateObject, validateInput} from '../../shared/utility';
 import FlashcardControls from './FlashcardControls';
@@ -89,8 +89,8 @@ class Flashcards extends Component {
     }
 
     compareValues = () => {
-        const min = this.state.controls.min.value;
-        const max = this.state.controls.max.value;
+        const min = Number(this.state.controls.min.value);
+        const max = Number(this.state.controls.max.value);
         let error = null;
         if(min >= max){
             if(!error) {error = {label: 'flashcards.error.min_greater_equal_max', values: {}}};
@@ -110,13 +110,14 @@ class Flashcards extends Component {
     }
     
     render() {
-        const formElementsArray = [];
+        let formElementsArray = [];
         for(let key in this.state.controls){
             formElementsArray.push({
                 id: key,
                 config: this.state.controls[key]
             });
         }
+        formElementsArray.sort((a, b) => b.id.localeCompare(a.id));
 
         let html = null;
 
@@ -125,37 +126,30 @@ class Flashcards extends Component {
         } else {
             if(!this.state.selectedFlashcards){
                 html = (
-                    <Grid container spacing={16} justify="space-around">
-                        <Grid item xs={12}>
-                            <Paper style={{padding: 20, textAlign: 'center'}}>
-                                <h1><FormattedMessage id="flashcards.title" /></h1>
-                                <p><FormattedMessage id="flashcards.description" /></p>
-                                <p style={{fontSize: '12px', color: 'red'}}>{this.state.formError ? <FormattedMessage id={this.state.formError.label} values={this.state.formError.values}/> : null}</p>
-                                <form onSubmit={this.submitFormHandler}>
-                                    {formElementsArray.map((control, index) => (
-                                        <FormControl 
-                                            key={control.id}
-                                            aria-describedby={control.id+"-describedby"} 
-                                            error={control.config.touched && !control.config.validate.isValid} 
-                                            style={{width: '65px', height: '80px', margin: '15px 20px'}}>
-                                            <InputLabel htmlFor={control.id}><FormattedMessage id={control.config.label} /></InputLabel>
-                                            <Input id={control.id} 
-                                                type={control.config.type} 
-                                                value={control.config.value} 
-                                                autoFocus={index === 0}
-                                                onChange={(event) => this.inputChangedHandler(event, control.id)} 
-                                                inputProps={{min: control.config.validation.minNumber, max: control.config.validation.maxNumber}} />
-                                            <FormHelperText id={control.id+"-describedby"}>
-                                                {control.config.validate.error.label ? <FormattedMessage id={control.config.validate.error.label} values={control.config.validate.error.values} /> : null}
-                                            </FormHelperText>
-                                        </FormControl>
-                                    ))}
-                                    <br/>
-                                    <Button variant="contained" color="primary" disabled={!this.state.formIsValid} type="submit" fullWidth style={{maxWidth: '325px'}}><FormattedMessage id="Go" /></Button>
-                                </form>
-                            </Paper>
-                        </Grid>
-                    </Grid>
+                    <Paper style={{padding: 20, textAlign: 'center'}}>
+                        <h1><FormattedMessage id="flashcards.title" /></h1>
+                        <p><FormattedMessage id="flashcards.description" /></p>
+                        <p style={{fontSize: '12px', color: 'red'}}>{this.state.formError ? <FormattedMessage id={this.state.formError.label} values={this.state.formError.values}/> : null}</p>
+                        <form onSubmit={this.submitFormHandler}>
+                            {formElementsArray.map((control, index) => (
+                                <TextField
+                                    key={control.id}
+                                    id={control.id} 
+                                    label={<FormattedMessage id={control.config.label} />}
+                                    style={{width: '100px', height: '80px', margin: '15px 20px'}}
+                                    type={control.config.type} 
+                                    value={control.config.value}
+                                    autoFocus={index === 0}
+                                    onChange={(event) => this.inputChangedHandler(event, control.id)}
+                                    inputProps={{min: control.config.validation.minNumber, max: control.config.validation.maxNumber}}
+                                    error={control.config.touched && !control.config.validate.isValid}
+                                    helperText={control.config.validate.error.label ? <FormattedMessage id={control.config.validate.error.label} values={control.config.validate.error.values} /> : null} 
+                                    variant="outlined" />
+                            ))}
+                            <br/>
+                            <Button variant="contained" color="primary" disabled={!this.state.formIsValid} type="submit" fullWidth style={{maxWidth: '325px'}}><FormattedMessage id="Go" /></Button>
+                        </form>
+                    </Paper>
                 )
             } else {
                 html = <FlashcardControls flashcards={this.state.selectedFlashcards} />
